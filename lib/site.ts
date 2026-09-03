@@ -1,7 +1,40 @@
+const FALLBACK_DOMAIN = "https://yacinebelkhouche.com";
+
+/**
+ * Resolve the canonical origin.
+ *
+ * `??` only falls back on null/undefined, so an env var that exists but is
+ * empty produced "" — and `new URL("")` in app/layout.tsx failed the whole
+ * production build. This tolerates empty values, a missing protocol
+ * ("example.com") and a trailing path, and falls back to the URLs Vercel
+ * injects so a fresh deploy has correct canonicals before anything is set by
+ * hand.
+ */
+function resolveDomain(): string {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.NEXT_PUBLIC_VERCEL_URL,
+    FALLBACK_DOMAIN,
+  ];
+
+  for (const candidate of candidates) {
+    const raw = candidate?.trim();
+    if (!raw) continue;
+    try {
+      return new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`).origin;
+    } catch {
+      // Malformed value — fall through to the next candidate.
+    }
+  }
+
+  return FALLBACK_DOMAIN;
+}
+
 export const site = {
   name: "Yacine Belkhouche",
   role: "AI Engineer & Full-Stack Web Architect",
-  domain: process.env.NEXT_PUBLIC_SITE_URL ?? "https://yacinebelkhouche.com",
+  domain: resolveDomain(),
   email: "yacine.belkhouche23@gmail.com",
   /** Swap the extension here if you save the photo as a .png instead. */
   profileImage: "/profile.jpg",
