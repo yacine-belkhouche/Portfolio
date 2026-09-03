@@ -35,7 +35,7 @@ export function About() {
                   Education
                 </p>
                 <p className="mt-2 text-[15px] leading-relaxed text-bone">
-                  Engineer Artificial Intelligence
+                  Engineering degree in Artificial Intelligence
                 </p>
                 <p className="mt-1 text-sm text-muted">University of Tlemcen</p>
               </div>
@@ -47,12 +47,12 @@ export function About() {
               <div className="space-y-7 text-[15px] leading-[1.85] text-muted sm:text-base">
                 <Reveal>
                   <p>
-                    I came to web development through artificial intelligence. A
-                    Master&apos;s at the University of Tlemcen meant years spent
-                    in the parts of software most people never touch — model
-                    architecture, data pipelines, computational cost, and the
-                    discipline of making something correct at scale before
-                    making it beautiful.
+                    I came to web development through artificial intelligence.
+                    An engineering degree at the University of Tlemcen meant
+                    years spent in the parts of software most people never
+                    touch — model architecture, data pipelines, computational
+                    cost, and the discipline of making something correct at
+                    scale before making it beautiful.
                   </p>
                 </Reveal>
                 <Reveal delay={0.06}>

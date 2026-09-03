@@ -10,7 +10,7 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -268,36 +268,50 @@ export function Counter({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-20%" });
   const reduce = useReducedMotion();
-  const match = value.match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
-  const [shown, setShown] = useState<number | null>(match ? 0 : null);
+
+  // Parsed once per value. A fresh match array on every render would land in
+  // the effect deps below, cancelling and restarting the animation each frame
+  // so the number never left zero.
+  const parts = useMemo(() => {
+    const m = value.match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
+    if (!m) return null;
+    return {
+      prefix: m[1],
+      target: parseFloat(m[2]),
+      suffix: m[3],
+      decimals: m[2].includes(".") ? 1 : 0,
+    };
+  }, [value]);
+
+  // Stays null until hydration so the server-rendered HTML — and anything
+  // crawling it — carries the real figure, not a zero waiting to animate.
+  const [shown, setShown] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!inView || !match) return;
-    const target = parseFloat(match[2]);
-    if (reduce) {
-      setShown(target);
-      return;
-    }
+    if (parts && !reduce) setShown(0);
+  }, [parts, reduce]);
+
+  useEffect(() => {
+    if (!inView || !parts || reduce) return;
     const start = performance.now();
     const dur = 1100;
     let frame = 0;
     const tick = (now: number) => {
       const p = Math.min((now - start) / dur, 1);
-      setShown(target * (1 - Math.pow(1 - p, 3)));
+      setShown(parts.target * (1 - Math.pow(1 - p, 3)));
       if (p < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [inView, match, reduce]);
+  }, [inView, parts, reduce]);
 
-  if (!match || shown === null) return <span ref={ref}>{value}</span>;
+  if (!parts || shown === null) return <span ref={ref}>{value}</span>;
 
-  const decimals = match[2].includes(".") ? 1 : 0;
   return (
     <span ref={ref}>
-      {match[1]}
-      {shown.toFixed(decimals)}
-      {match[3]}
+      {parts.prefix}
+      {shown.toFixed(parts.decimals)}
+      {parts.suffix}
     </span>
   );
 }

@@ -46,7 +46,7 @@ export function Hero() {
               className="inline-flex items-center gap-3 rounded-full border border-hairline bg-ink-raised/60 py-1.5 pl-2 pr-4 backdrop-blur"
             >
               <span className="rounded-full bg-gold/12 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
-                MSc · AI
+                AI Engineer
               </span>
               <span className="text-[11px] tracking-wide text-muted">
                 {site.availability}

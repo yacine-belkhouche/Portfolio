@@ -17,7 +17,7 @@ const display = Instrument_Serif({
 });
 
 const description =
-  "Yacine Belkhouche builds high-performance business platforms — custom management systems on Supabase, sub-second Next.js frontends, and search architecture engineered to rank. Master's in Artificial Intelligence, University of Tlemcen.";
+  "Yacine Belkhouche builds high-performance business platforms — custom management systems on Supabase, sub-second Next.js frontends, and search architecture engineered to rank. Engineering degree in Artificial Intelligence, University of Tlemcen.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),

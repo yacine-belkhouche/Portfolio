@@ -14,7 +14,7 @@ export const site = {
 
 export const stats = [
   { value: "2+", label: "Years freelancing", sub: "Delivered end to end, solo" },
-  { value: "MSc", label: "Artificial Intelligence", sub: "University of Tlemcen" },
+  { value: "AI", label: "Engineering degree", sub: "University of Tlemcen" },
   { value: "<1s", label: "Typical LCP", sub: "On the builds I ship" },
   { value: "100%", label: "Client-owned code", sub: "No lock-in, ever" },
 ] as const;
