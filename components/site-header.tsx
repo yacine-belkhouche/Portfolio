@@ -47,10 +47,10 @@ export function SiteHeader() {
               className="group flex items-baseline gap-2.5"
               aria-label={site.name + " — home"}
             >
-              <span className="font-display text-xl tracking-tight text-bone">
+              <span className="font-display text-lg tracking-tight text-bone sm:text-xl">
                 Yacine
               </span>
-              <span className="hidden text-xl font-light tracking-tight text-muted transition-colors duration-500 group-hover:text-bone sm:inline">
+              <span className="text-lg font-light tracking-tight text-muted transition-colors duration-500 group-hover:text-bone sm:text-xl">
                 Belkhouche
               </span>
             </a>

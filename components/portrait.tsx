@@ -104,7 +104,29 @@ export function Portrait() {
         </div>
       </div>
 
-      {/* Floating credential chips */}
+      {/*
+        Below xl there is no room to float the chips beside the frame, so the
+        same two credentials sit under it as a paired row. Without this, phones
+        lost the content entirely.
+      */}
+      <div className="mt-4 grid grid-cols-2 gap-3 xl:hidden">
+        {[
+          { k: "Engineering", v: "Artificial Intelligence" },
+          { k: "Freelancing since", v: "2023 · 2+ years" },
+        ].map((c) => (
+          <div
+            key={c.k}
+            className="rounded-xl border border-hairline bg-ink-raised/70 px-4 py-3"
+          >
+            <p className="text-[10px] uppercase tracking-[0.18em] text-muted">
+              {c.k}
+            </p>
+            <p className="mt-1 text-[13px] leading-snug text-bone">{c.v}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Floating credential chips — xl and up, where the gutters allow it */}
       <motion.div
         initial={{ opacity: 0, x: -18 }}
         animate={{ opacity: 1, x: 0 }}

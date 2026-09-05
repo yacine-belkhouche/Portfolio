@@ -37,15 +37,15 @@ export function Hero() {
       />
 
       <div className="container-x relative">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
-          <div>
+        <div className="grid items-center gap-y-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-20 lg:gap-y-8">
+          <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
               className="inline-flex items-center gap-3 rounded-full border border-hairline bg-ink-raised/60 py-1.5 pl-2 pr-4 backdrop-blur"
             >
-              <span className="rounded-full bg-gold/12 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
+              <span className="shrink-0 whitespace-nowrap rounded-full bg-gold/12 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
                 AI Engineer
               </span>
               <span className="text-[11px] tracking-wide text-muted">
@@ -62,12 +62,23 @@ export function Hero() {
                 />
               </span>
             </h1>
+          </div>
 
+          {/*
+            Second column on desktop; between the headline and the body copy on
+            mobile — so the photo is seen alongside the headline the way it is
+            on a wide screen, instead of a screen and a half further down.
+          */}
+          <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            <Portrait />
+          </div>
+
+          <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.95, ease: EASE }}
-              className="mt-8 max-w-xl text-[15px] leading-[1.75] text-muted sm:text-base"
+              className="max-w-xl text-[15px] leading-[1.75] text-muted sm:text-base"
             >
               I&apos;m{" "}
               <span className="text-bone">Yacine Belkhouche</span> — an AI
@@ -138,8 +149,6 @@ export function Hero() {
               ))}
             </motion.dl>
           </div>
-
-          <Portrait />
         </div>
       </div>
 
