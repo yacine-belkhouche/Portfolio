@@ -2,20 +2,22 @@ import { site } from "@/lib/site";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
+  // Offer a line break at the @ rather than letting the address split mid-word
+  const emailParts = site.email.split("@");
 
   return (
     <footer className="relative border-t border-hairline py-14">
       <div className="container-x">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
-            <p className="font-display text-2xl text-bone">
+            <p className="font-display text-2xl text-fg">
               Yacine Belkhouche
             </p>
             <p className="mt-3 text-[13px] leading-relaxed text-muted">
               AI Engineer and full-stack web architect building fast,
               well-structured platforms for businesses that depend on them.
             </p>
-            <p className="mt-4 text-[12px] text-muted/80">{site.location}</p>
+            <p className="mt-4 text-[12px] text-muted">{site.location}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-3">
@@ -33,7 +35,7 @@ export function SiteFooter() {
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      className="text-muted transition-colors duration-300 hover:text-bone"
+                      className="text-muted transition-colors duration-300 hover:text-fg"
                     >
                       {l.label}
                     </a>
@@ -61,7 +63,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={site.phoneHref}
-                    className="text-bone transition-colors duration-300 hover:text-gold"
+                    className="text-fg transition-colors duration-300 hover:text-gold"
                   >
                     {site.phoneDisplay}
                   </a>
@@ -69,9 +71,10 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={"mailto:" + site.email}
-                    className="break-all text-bone transition-colors duration-300 hover:text-gold"
+                    className="text-fg transition-colors duration-300 [overflow-wrap:anywhere] hover:text-gold"
                   >
-                    {site.email}
+                    {emailParts[0]}
+                    <wbr />@{emailParts[1]}
                   </a>
                 </li>
               </ul>

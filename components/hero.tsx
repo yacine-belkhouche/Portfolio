@@ -15,11 +15,11 @@ export function Hero() {
     >
       {/* Ambient light architecture */}
       <div
-        className="glow -top-40 left-1/4 h-[34rem] w-[34rem] bg-gold/10"
+        className="glow -top-40 left-1/4 h-[34rem] w-[34rem] bg-gold-soft/25"
         aria-hidden
       />
       <div
-        className="glow -right-24 top-40 h-[28rem] w-[28rem] bg-moss/14"
+        className="glow -right-24 top-40 h-[28rem] w-[28rem] bg-moss/10"
         aria-hidden
       />
       <div
@@ -27,7 +27,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+            "linear-gradient(rgba(19,23,20,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(19,23,20,0.05) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
           maskImage:
             "radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%)",
@@ -43,9 +43,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-              className="inline-flex items-center gap-3 rounded-full border border-hairline bg-ink-raised/60 py-1.5 pl-2 pr-4 backdrop-blur"
+              className="inline-flex items-center gap-3 rounded-full border border-hairline bg-surface/80 py-1.5 pl-2 pr-4 backdrop-blur"
             >
-              <span className="shrink-0 whitespace-nowrap rounded-full bg-gold/12 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
+              <span className="shrink-0 whitespace-nowrap rounded-full bg-gold/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
                 AI Engineer
               </span>
               <span className="text-[11px] tracking-wide text-muted">
@@ -53,7 +53,7 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="mt-8 font-display text-[2.65rem] leading-[1.04] tracking-[-0.02em] text-bone sm:text-6xl lg:text-[4.35rem]">
+            <h1 className="mt-8 font-display text-[2.65rem] leading-[1.04] tracking-[-0.02em] text-fg sm:text-6xl lg:text-[4.35rem]">
               <WordsUp text="High-performance web platforms," />
               <span className="mt-2 block italic gold-wash">
                 <WordsUp
@@ -81,11 +81,11 @@ export function Hero() {
               className="max-w-xl text-[15px] leading-[1.75] text-muted sm:text-base"
             >
               I&apos;m{" "}
-              <span className="text-bone">Yacine Belkhouche</span> — an AI
+              <span className="text-fg">Yacine Belkhouche</span> — an AI
               Engineer who builds the software businesses actually run on.
               Custom management systems on{" "}
-              <span className="text-bone">Supabase</span>, sub-second{" "}
-              <span className="text-bone">Next.js</span> frontends, and search
+              <span className="text-fg">Supabase</span>, sub-second{" "}
+              <span className="text-fg">Next.js</span> frontends, and search
               architecture that compounds into organic traffic. One person
               accountable, from schema to shipped.
             </motion.p>
@@ -98,7 +98,7 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-bone px-7 py-3.5 text-sm font-medium text-ink transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-fg px-7 py-3.5 text-sm font-medium text-canvas transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
               >
                 <span className="relative z-10">Book a discovery call</span>
                 <svg
@@ -120,7 +120,7 @@ export function Hero() {
 
               <a
                 href="#services"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-hairline px-7 py-3.5 text-sm text-bone transition-colors duration-500 hover:border-gold/40 hover:bg-white/[0.03]"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-hairline px-7 py-3.5 text-sm text-fg transition-colors duration-500 hover:border-gold/40 hover:bg-fg/[0.03]"
               >
                 What I build
                 <span className="text-muted transition-transform duration-500 group-hover:translate-y-0.5">
@@ -144,7 +144,7 @@ export function Hero() {
                   <dt className="text-[10px] uppercase tracking-[0.18em] text-muted">
                     {item.k}
                   </dt>
-                  <dd className="mt-1.5 text-sm text-bone">{item.v}</dd>
+                  <dd className="mt-1.5 text-sm text-fg">{item.v}</dd>
                 </div>
               ))}
             </motion.dl>

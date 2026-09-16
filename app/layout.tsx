@@ -60,8 +60,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#06070a",
-  colorScheme: "dark",
+  themeColor: "#f5f6f2",
+  colorScheme: "light",
 };
 
 const jsonLd = {
@@ -108,7 +108,7 @@ export default function RootLayout({
         />
         <a
           href="#work"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-canvas"
         >
           Skip to content
         </a>

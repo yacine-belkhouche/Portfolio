@@ -69,13 +69,13 @@ export function Contact() {
   }
 
   const field =
-    "w-full rounded-lg border border-hairline bg-ink/60 px-4 py-3 text-[15px] text-bone placeholder:text-muted/55 outline-none transition-all duration-500 focus:border-gold/50 focus:bg-ink focus:ring-1 focus:ring-gold/25";
+    "w-full rounded-lg border border-hairline bg-canvas px-4 py-3 text-[15px] text-fg placeholder:text-muted/70 outline-none transition-all duration-500 focus:border-gold/50 focus:bg-surface focus:ring-1 focus:ring-gold/20";
   const label = "block text-[11px] uppercase tracking-[0.18em] text-muted";
 
   return (
     <section id="contact" className="relative scroll-mt-24 py-24 lg:py-36">
       <div
-        className="glow left-1/2 top-10 h-[30rem] w-[30rem] -translate-x-1/2 bg-gold/[0.09]"
+        className="glow left-1/2 top-10 h-[30rem] w-[30rem] -translate-x-1/2 bg-gold-soft/[0.18]"
         aria-hidden
       />
 
@@ -84,12 +84,12 @@ export function Contact() {
           <Reveal>
             <p className="inline-flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-muted">
               <span className="h-px w-10 bg-hairline" />
-              <span className="text-gold/70">04</span>
+              <span className="text-gold">04</span>
               Contact
               <span className="h-px w-10 bg-hairline" />
             </p>
           </Reveal>
-          <h2 className="mt-7 font-display text-4xl leading-[1.08] tracking-[-0.02em] text-bone sm:text-5xl lg:text-[3.75rem]">
+          <h2 className="mt-7 font-display text-4xl leading-[1.08] tracking-[-0.02em] text-fg sm:text-5xl lg:text-[3.75rem]">
             <WordsUp text="Tell me what your business" />
             <span className="mt-2 block italic gold-wash">
               <WordsUp text="is losing time on." delay={0.25} />
@@ -97,7 +97,7 @@ export function Contact() {
           </h2>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-[15px] leading-[1.8] text-muted">
-              Send a few lines about the problem — not a spec. I&apos;ll reply
+              Send a few lines about the problem  not a spec. I&apos;ll reply
               within 24 hours with an honest read on whether I&apos;m the right
               person, a rough scope, and a number. No pitch deck, no discovery
               retainer.
@@ -128,7 +128,7 @@ export function Contact() {
             },
           ].map((c, i) => (
             <Reveal key={c.key} delay={i * 0.08}>
-              <Spotlight className="edge-lit h-full rounded-2xl border border-hairline bg-ink-raised/70 transition-colors duration-700 hover:border-gold/25">
+              <Spotlight className="edge-lit h-full rounded-2xl border border-hairline bg-surface transition-colors duration-700 hover:border-gold/25">
                 <div className="flex h-full flex-col p-6 sm:p-7">
                   <div className="flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-hairline text-gold">
@@ -152,16 +152,23 @@ export function Contact() {
 
                   <a
                     href={c.href}
-                    className="mt-5 block break-all font-display text-2xl text-bone transition-colors duration-500 hover:text-gold sm:text-[1.7rem]"
+                    className="mt-5 block font-display text-2xl text-fg [overflow-wrap:anywhere] transition-colors duration-500 hover:text-gold sm:text-[1.7rem]"
                   >
-                    {c.value}
+                    {c.key === "email" ? (
+                      <>
+                        {c.value.split("@")[0]}
+                        <wbr />@{c.value.split("@")[1]}
+                      </>
+                    ) : (
+                      c.value
+                    )}
                   </a>
                   <p className="mt-1.5 text-[12px] text-muted">{c.sub}</p>
 
                   <button
                     type="button"
                     onClick={() => copy(c.copyValue, c.key)}
-                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-hairline px-3.5 py-1.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/35 hover:text-bone"
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-hairline px-3.5 py-1.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/35 hover:text-fg"
                   >
                     {copied === c.key ? "Copied" : "Copy"}
                     <span aria-hidden>{copied === c.key ? "✓" : "⧉"}</span>
@@ -174,7 +181,7 @@ export function Contact() {
 
         {/* Enquiry form */}
         <Reveal delay={0.1} y={36}>
-          <div className="relative mx-auto mt-6 max-w-3xl overflow-hidden rounded-2xl border border-hairline bg-ink-raised/70 p-6 sm:p-9">
+          <div className="relative mx-auto mt-6 max-w-3xl overflow-hidden rounded-2xl border border-hairline bg-surface p-6 sm:p-9">
             <AnimatePresence mode="wait">
               {status === "sent" ? (
                 <motion.div
@@ -193,7 +200,7 @@ export function Contact() {
                   >
                     ✓
                   </motion.span>
-                  <h3 className="mt-6 font-display text-3xl text-bone">
+                  <h3 className="mt-6 font-display text-3xl text-fg">
                     Message received.
                   </h3>
                   <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
@@ -210,7 +217,7 @@ export function Contact() {
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="mt-8 text-[13px] text-muted underline-offset-4 transition-colors hover:text-bone hover:underline"
+                    className="mt-8 text-[13px] text-muted underline-offset-4 transition-colors hover:text-fg hover:underline"
                   >
                     Send another
                   </button>
@@ -249,7 +256,7 @@ export function Contact() {
                       className={field}
                     />
                     {errors.name && (
-                      <p className="text-[12px] text-red-400/90">{errors.name}</p>
+                      <p className="text-[12px] text-red-700">{errors.name}</p>
                     )}
                   </div>
 
@@ -267,7 +274,7 @@ export function Contact() {
                       className={field}
                     />
                     {errors.email && (
-                      <p className="text-[12px] text-red-400/90">{errors.email}</p>
+                      <p className="text-[12px] text-red-700">{errors.email}</p>
                     )}
                   </div>
 
@@ -298,7 +305,7 @@ export function Contact() {
                         Select a range
                       </option>
                       {budgets.map((b) => (
-                        <option key={b} value={b} className="bg-ink">
+                        <option key={b} value={b} className="bg-surface text-fg">
                           {b}
                         </option>
                       ))}
@@ -313,7 +320,7 @@ export function Contact() {
                       {services.map((s, i) => (
                         <label
                           key={s}
-                          className="cursor-pointer rounded-full border border-hairline px-4 py-2 text-[12px] text-muted transition-all duration-400 has-[:checked]:border-gold/50 has-[:checked]:bg-gold/[0.08] has-[:checked]:text-bone hover:border-white/20 hover:text-bone"
+                          className="cursor-pointer rounded-full border border-hairline px-4 py-2 text-[12px] text-muted transition-all duration-400 has-[:checked]:border-gold/50 has-[:checked]:bg-gold/[0.08] has-[:checked]:text-fg hover:border-hairline-strong hover:text-fg"
                         >
                           <input
                             type="radio"
@@ -341,7 +348,7 @@ export function Contact() {
                       className={field + " resize-none"}
                     />
                     {errors.message && (
-                      <p className="text-[12px] text-red-400/90">
+                      <p className="text-[12px] text-red-700">
                         {errors.message}
                       </p>
                     )}
@@ -355,7 +362,7 @@ export function Contact() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-bone px-7 py-3.5 text-sm font-medium text-ink transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-fg px-7 py-3.5 text-sm font-medium text-canvas transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       <span className="relative z-10">
                         {status === "sending" ? "Sending…" : "Send enquiry"}
@@ -382,7 +389,7 @@ export function Contact() {
                     <motion.p
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="rounded-lg border border-red-500/25 bg-red-500/[0.07] px-4 py-3 text-[13px] text-red-300/90 sm:col-span-2"
+                      className="rounded-lg border border-red-600/25 bg-red-600/[0.06] px-4 py-3 text-[13px] text-red-800 sm:col-span-2"
                     >
                       {message}
                     </motion.p>

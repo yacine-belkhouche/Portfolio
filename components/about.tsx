@@ -7,7 +7,7 @@ export function About() {
   return (
     <section id="about" className="relative scroll-mt-24 py-24 lg:py-36">
       <div
-        className="glow left-[-10rem] top-1/3 h-[26rem] w-[26rem] bg-gold/[0.07]"
+        className="glow left-[-10rem] top-1/3 h-[26rem] w-[26rem] bg-gold-soft/[0.16]"
         aria-hidden
       />
 
@@ -16,13 +16,13 @@ export function About() {
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
               <p className="flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-muted">
-                <span className="text-gold/70">01</span>
+                <span className="text-gold">01</span>
                 <span className="h-px w-10 bg-hairline" />
                 About
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-bone sm:text-5xl">
+              <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-fg sm:text-5xl">
                 Most developers learn frameworks.
                 <span className="mt-2 block italic text-muted">
                   I learned systems first.
@@ -30,11 +30,11 @@ export function About() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <div className="mt-8 rounded-xl border border-hairline bg-ink-raised/50 p-5">
+              <div className="mt-8 rounded-xl border border-hairline bg-surface p-5">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
                   Education
                 </p>
-                <p className="mt-2 text-[15px] leading-relaxed text-bone">
+                <p className="mt-2 text-[15px] leading-relaxed text-fg">
                   Engineering degree in Artificial Intelligence
                 </p>
                 <p className="mt-1 text-sm text-muted">University of Tlemcen</p>
@@ -62,7 +62,7 @@ export function About() {
                     constraint, model it honestly, then engineer the shortest
                     path between what a user intends and the result they came
                     for. It&apos;s why my{" "}
-                    <span className="text-bone">database schemas</span> still
+                    <span className="text-fg">database schemas</span> still
                     hold up when a client&apos;s team triples, why my frontends
                     stay fast after two years of feature requests, and why the
                     structure underneath is legible to a crawler on day one.
@@ -70,7 +70,7 @@ export function About() {
                 </Reveal>
                 <Reveal delay={0.12}>
                   <p>
-                    <span className="text-bone">
+                    <span className="text-fg">
                       Two years of freelancing
                     </span>{" "}
                     taught me the other half — the commercial half. Businesses
@@ -96,12 +96,12 @@ export function About() {
               {stats.map((s) => (
                 <StaggerItem
                   key={s.label}
-                  className="edge-lit bg-ink-raised p-6 transition-colors duration-500 hover:bg-ink-soft"
+                  className="edge-lit bg-surface p-6 transition-colors duration-500 hover:bg-surface-2"
                 >
-                  <p className="font-display text-4xl leading-none text-bone">
+                  <p className="font-display text-4xl leading-none text-fg">
                     <Counter value={s.value} />
                   </p>
-                  <p className="mt-3 text-[13px] text-bone/85">{s.label}</p>
+                  <p className="mt-3 text-[13px] text-fg/85">{s.label}</p>
                   <p className="mt-1 text-[11px] leading-relaxed text-muted">
                     {s.sub}
                   </p>

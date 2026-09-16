@@ -176,7 +176,7 @@ export function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[70] h-px origin-left bg-gradient-to-r from-gold-deep via-gold to-transparent"
+      className="fixed inset-x-0 top-0 z-[70] h-px origin-left bg-gradient-to-r from-gold via-gold-soft to-transparent"
       aria-hidden
     />
   );
@@ -232,7 +232,7 @@ export function Spotlight({
       x +
       "px " +
       y +
-      "px, rgba(216,185,120,0.10), transparent 70%)"
+      "px, rgba(212,180,106,0.16), transparent 70%)"
   );
 
   return (

@@ -37,7 +37,7 @@ export function SiteHeader() {
           className={
             "transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] " +
             (condensed
-              ? "border-b border-hairline bg-ink/72 backdrop-blur-xl"
+              ? "border-b border-hairline bg-canvas/80 backdrop-blur-xl"
               : "border-b border-transparent bg-transparent")
           }
         >
@@ -47,10 +47,10 @@ export function SiteHeader() {
               className="group flex items-baseline gap-2.5"
               aria-label={site.name + " — home"}
             >
-              <span className="font-display text-lg tracking-tight text-bone sm:text-xl">
+              <span className="font-display text-lg tracking-tight text-fg sm:text-xl">
                 Yacine
               </span>
-              <span className="text-lg font-light tracking-tight text-muted transition-colors duration-500 group-hover:text-bone sm:text-xl">
+              <span className="text-lg font-light tracking-tight text-muted transition-colors duration-500 group-hover:text-fg sm:text-xl">
                 Belkhouche
               </span>
             </a>
@@ -60,7 +60,7 @@ export function SiteHeader() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="group relative text-[13px] tracking-wide text-muted transition-colors duration-300 hover:text-bone"
+                  className="group relative text-[13px] tracking-wide text-muted transition-colors duration-300 hover:text-fg"
                 >
                   {l.label}
                   <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
@@ -71,7 +71,7 @@ export function SiteHeader() {
             <div className="flex items-center gap-3">
               <a
                 href="#contact"
-                className="group relative hidden overflow-hidden rounded-full border border-hairline px-5 py-2.5 text-[13px] tracking-wide text-bone transition-colors duration-500 hover:border-gold/45 sm:inline-flex"
+                className="group relative hidden overflow-hidden rounded-full border border-hairline px-5 py-2.5 text-[13px] tracking-wide text-fg transition-colors duration-500 hover:border-gold/45 sm:inline-flex"
               >
                 <span className="relative z-10">Start a project</span>
                 <span className="absolute inset-0 -translate-y-full bg-gold/10 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
@@ -87,13 +87,13 @@ export function SiteHeader() {
                 <span className="relative block h-3 w-4">
                   <span
                     className={
-                      "absolute left-0 h-px w-4 bg-bone transition-all duration-400 " +
+                      "absolute left-0 h-px w-4 bg-fg transition-all duration-400 " +
                       (open ? "top-1.5 rotate-45" : "top-0")
                     }
                   />
                   <span
                     className={
-                      "absolute left-0 h-px w-4 bg-bone transition-all duration-400 " +
+                      "absolute left-0 h-px w-4 bg-fg transition-all duration-400 " +
                       (open ? "top-1.5 -rotate-45" : "top-3")
                     }
                   />
@@ -111,7 +111,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-ink/95 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-40 bg-canvas/97 backdrop-blur-2xl md:hidden"
           >
             <div className="container-x flex h-full flex-col justify-center gap-2">
               {links.map((l, i) => (
@@ -126,7 +126,7 @@ export function SiteHeader() {
                     duration: 0.7,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="border-b border-hairline py-5 font-display text-4xl text-bone"
+                  className="border-b border-hairline py-5 font-display text-4xl text-fg"
                 >
                   {l.label}
                 </motion.a>

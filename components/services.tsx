@@ -86,13 +86,13 @@ export function Services() {
         <div className="max-w-3xl">
           <Reveal>
             <p className="flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-muted">
-              <span className="text-gold/70">02</span>
+              <span className="text-gold">02</span>
               <span className="h-px w-10 bg-hairline" />
               Services
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-bone sm:text-5xl lg:text-[3.5rem]">
+            <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-fg sm:text-5xl lg:text-[3.5rem]">
               Three disciplines that
               <span className="italic gold-wash"> compound</span> when one
               person owns all of them.
@@ -112,11 +112,11 @@ export function Services() {
         <div className="mt-16 space-y-5 lg:mt-20">
           {services.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.06} y={34}>
-              <Spotlight className="edge-lit rounded-2xl border border-hairline bg-ink-raised/70 transition-colors duration-700 hover:border-white/[0.14]">
+              <Spotlight className="edge-lit rounded-2xl border border-hairline bg-surface transition-colors duration-700 hover:border-hairline-strong">
                 <div className="grid gap-8 p-7 sm:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:p-12">
                   <div>
                     <div className="flex items-start justify-between gap-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-hairline bg-ink text-gold transition-all duration-700 group-hover:border-gold/35 group-hover:bg-gold/[0.06]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-hairline bg-canvas text-gold transition-all duration-700 group-hover:border-gold/35 group-hover:bg-gold/[0.06]">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -130,15 +130,15 @@ export function Services() {
                           {s.icon}
                         </svg>
                       </div>
-                      <span className="font-display text-5xl leading-none text-white/[0.07] transition-colors duration-700 group-hover:text-white/[0.13]">
+                      <span className="font-display text-5xl leading-none text-fg/[0.07] transition-colors duration-700 group-hover:text-fg/[0.12]">
                         {s.n}
                       </span>
                     </div>
 
-                    <h3 className="mt-7 font-display text-[1.75rem] leading-tight tracking-[-0.01em] text-bone sm:text-[2rem]">
+                    <h3 className="mt-7 font-display text-[1.75rem] leading-tight tracking-[-0.01em] text-fg sm:text-[2rem]">
                       {s.title}
                     </h3>
-                    <p className="mt-3 text-[15px] italic leading-relaxed text-gold/85">
+                    <p className="mt-3 text-[15px] italic leading-relaxed text-gold">
                       {s.lede}
                     </p>
 
@@ -146,7 +146,7 @@ export function Services() {
                       {s.tags.map((t) => (
                         <span
                           key={t}
-                          className="rounded-full border border-hairline px-3 py-1.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/30 hover:text-bone"
+                          className="rounded-full border border-hairline px-3 py-1.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/30 hover:text-fg"
                         >
                           {t}
                         </span>
@@ -162,7 +162,7 @@ export function Services() {
                     </div>
 
                     <div className="flex items-center justify-between gap-6 border-t border-hairline pt-6">
-                      <p className="text-[13px] text-bone/85">{s.outcome}</p>
+                      <p className="text-[13px] text-fg/85">{s.outcome}</p>
                       <motion.a
                         href="#contact"
                         whileHover={{ x: 4 }}

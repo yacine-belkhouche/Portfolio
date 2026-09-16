@@ -37,13 +37,13 @@ export function Process() {
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
               <p className="flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-muted">
-                <span className="text-gold/70">03</span>
+                <span className="text-gold">03</span>
                 <span className="h-px w-10 bg-hairline" />
                 Process
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-bone sm:text-5xl">
+              <h2 className="mt-7 font-display text-4xl leading-[1.1] tracking-[-0.02em] text-fg sm:text-5xl">
                 Predictable work,
                 <span className="mt-2 block italic text-muted">
                   visible from the first week.
@@ -65,11 +65,11 @@ export function Process() {
             />
             {steps.map((s) => (
               <StaggerItem key={s.n} className="group relative pb-10 pl-16 last:pb-0">
-                <span className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-ink font-display text-sm text-muted transition-all duration-700 group-hover:border-gold/40 group-hover:text-gold">
+                <span className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-canvas font-display text-sm text-muted transition-all duration-700 group-hover:border-gold/40 group-hover:text-gold">
                   {s.n}
                 </span>
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="font-display text-2xl text-bone">{s.title}</h3>
+                  <h3 className="font-display text-2xl text-fg">{s.title}</h3>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-muted">
                     {s.time}
                   </span>
