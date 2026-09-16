@@ -9,7 +9,7 @@ const services = [
   "Business Management System",
   "High-Performance Web Development",
   "Technical SEO",
-  "Not sure yet — let's talk",
+  "Not sure yet? Let's talk",
 ];
 
 const budgets = ["Under $1k", "$1k – $3k", "$3k – $8k", "$8k+", "Retainer"];
@@ -28,7 +28,7 @@ export function Contact() {
       setCopied(key);
       setTimeout(() => setCopied(null), 1800);
     } catch {
-      /* clipboard blocked — the link still works */
+      /* clipboard blocked; the link still works */
     }
   }
 
@@ -105,7 +105,7 @@ export function Contact() {
           </Reveal>
         </div>
 
-        {/* Direct lines — phone & email, front and centre */}
+        {/* Direct lines: phone & email, front and centre */}
         <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-2">
           {[
             {

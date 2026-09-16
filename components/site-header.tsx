@@ -45,7 +45,7 @@ export function SiteHeader() {
             <a
               href="#top"
               className="group flex items-baseline gap-2.5"
-              aria-label={site.name + " — home"}
+              aria-label={site.name + ", home"}
             >
               <span className="font-display text-lg tracking-tight text-fg sm:text-xl">
                 Yacine

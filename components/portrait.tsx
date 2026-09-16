@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 /**
  * Drop the photo in at `public/profile.jpg`.
  * Until it exists, this renders a deliberate monogram plate rather than a
- * broken image — the frame is designed to look finished either way.
+ * broken image; the frame is designed to look finished either way.
  */
 export function Portrait() {
   const [failed, setFailed] = useState(false);
@@ -24,7 +24,7 @@ export function Portrait() {
       <div className="glow -left-16 -top-10 h-64 w-64 bg-gold-soft/30" aria-hidden />
       <div className="glow -bottom-16 right-0 h-56 w-56 bg-moss/12" aria-hidden />
 
-      {/* Offset hairline frame — the "gallery mat" */}
+      {/* Offset hairline frame: the "gallery mat" */}
       <div
         className="absolute -inset-3 rounded-[1.75rem] border border-hairline sm:-inset-5"
         aria-hidden
@@ -43,7 +43,7 @@ export function Portrait() {
       <div className="group relative overflow-hidden rounded-[1.25rem] border border-hairline bg-surface shadow-[0_40px_80px_-40px_rgba(19,23,20,0.45)]">
         {/*
           11/20 matches public/profile.jpg exactly, so object-cover has nothing
-          left to crop — the composition is baked into the file by crop.mjs.
+          left to crop; the composition is baked into the file by crop.mjs.
           Re-run that script with different numbers to recompose.
         */}
         <div className="relative aspect-[11/20] w-full">
@@ -126,7 +126,7 @@ export function Portrait() {
         ))}
       </div>
 
-      {/* Floating credential chips — xl and up, where the gutters allow it */}
+      {/* Floating credential chips: xl and up, where the gutters allow it */}
       <motion.div
         initial={{ opacity: 0, x: -18 }}
         animate={{ opacity: 1, x: 0 }}

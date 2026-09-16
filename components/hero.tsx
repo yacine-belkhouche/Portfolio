@@ -66,7 +66,7 @@ export function Hero() {
 
           {/*
             Second column on desktop; between the headline and the body copy on
-            mobile — so the photo is seen alongside the headline the way it is
+            mobile, so the photo is seen alongside the headline the way it is
             on a wide screen, instead of a screen and a half further down.
           */}
           <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
@@ -81,7 +81,7 @@ export function Hero() {
               className="max-w-xl text-[15px] leading-[1.75] text-muted sm:text-base"
             >
               I&apos;m{" "}
-              <span className="text-fg">Yacine Belkhouche</span> — an AI
+              <span className="text-fg">Yacine Belkhouche</span>, an AI
               Engineer who builds the software businesses actually run on.
               Custom management systems on{" "}
               <span className="text-fg">Supabase</span>, sub-second{" "}

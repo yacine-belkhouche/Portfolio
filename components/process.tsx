@@ -13,7 +13,7 @@ const steps = [
     n: "02",
     title: "Architect",
     time: "Week 1",
-    body: "The data model comes first — tables, relationships, access rules — alongside the page structure and the performance budget. You approve an architecture you understand in plain language before a single component is written.",
+    body: "The data model comes first (tables, relationships, access rules), alongside the page structure and the performance budget. You approve an architecture you understand in plain language before a single component is written.",
   },
   {
     n: "03",

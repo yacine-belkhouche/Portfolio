@@ -4,7 +4,7 @@ import { getSupabaseAdminClient } from "@/lib/supabase/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-/** Naive per-instance rate limit — enough to blunt casual form spam. */
+/** Naive per-instance rate limit, enough to blunt casual form spam. */
 const hits = new Map<string, number[]>();
 const WINDOW_MS = 60_000;
 const MAX_PER_WINDOW = 4;

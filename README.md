@@ -1,4 +1,4 @@
-# Yacine Belkhouche — Portfolio
+# Yacine Belkhouche Portfolio
 
 A single-page marketing site built with **Next.js (App Router)**, **Tailwind CSS v4**,
 **Framer Motion** and **Supabase**.
@@ -16,7 +16,7 @@ Open http://localhost:3000.
 ## The portrait
 
 `assets/me1-original.jpeg` is the untouched 1800×4000 source. `crop.mjs`
-derives `public/profile.jpg` from it — an 1100-px-tall three-quarter crop,
+derives `public/profile.jpg` from it: a three-quarter crop,
 1200×2182 at 181 KB (down from 2.7 MB). The hero frame is `aspect-[11/20]`,
 matching that file exactly, so `object-cover` has nothing left to trim and the
 composition is fixed in the asset rather than guessed at in CSS.
@@ -50,7 +50,7 @@ components/
   hero.tsx / portrait.tsx
   about.tsx / services.tsx / process.tsx / contact.tsx / site-footer.tsx
 lib/
-  site.ts              name, phone, email, stats, stack — edit copy here
+  site.ts              name, phone, email, stats, stack; edit copy here
   supabase/            browser (anon) + server (service role) clients
 supabase/schema.sql    leads table, constraints, RLS
 ```
@@ -63,7 +63,7 @@ Colours, fonts and easing live in the `@theme` block at the top of
 ## Animation notes
 
 Every animated component is a client component; the page shell stays a server
-component. All motion respects `prefers-reduced-motion` — reveals collapse to a
+component. All motion respects `prefers-reduced-motion`: reveals collapse to a
 plain opacity fade and parallax is disabled entirely.
 
 ## Performance

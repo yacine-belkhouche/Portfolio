@@ -4,7 +4,7 @@ const FALLBACK_DOMAIN = "https://yacinebelkhouche.com";
  * Resolve the canonical origin.
  *
  * `??` only falls back on null/undefined, so an env var that exists but is
- * empty produced "" — and `new URL("")` in app/layout.tsx failed the whole
+ * empty produced "", and `new URL("")` in app/layout.tsx failed the whole
  * production build. This tolerates empty values, a missing protocol
  * ("example.com") and a trailing path, and falls back to the URLs Vercel
  * injects so a fresh deploy has correct canonicals before anything is set by
@@ -24,7 +24,7 @@ function resolveDomain(): string {
     try {
       return new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`).origin;
     } catch {
-      // Malformed value — fall through to the next candidate.
+      // Malformed value; fall through to the next candidate.
     }
   }
 
@@ -41,7 +41,7 @@ export const site = {
   phoneDisplay: "0672128799",
   phoneIntl: "+213 672 12 87 99",
   phoneHref: "tel:+213672128799",
-  location: "Tlemcen, Algeria — working with clients worldwide",
+  location: "Tlemcen, Algeria · working with clients worldwide",
   availability: "Accepting 2 new client projects this quarter",
 } as const;
 

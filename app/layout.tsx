@@ -17,13 +17,13 @@ const display = Instrument_Serif({
 });
 
 const description =
-  "Yacine Belkhouche builds high-performance business platforms — custom management systems on Supabase, sub-second Next.js frontends, and search architecture engineered to rank. Engineering degree in Artificial Intelligence, University of Tlemcen.";
+  "Yacine Belkhouche builds high-performance business platforms: custom management systems on Supabase, sub-second Next.js frontends, and search architecture engineered to rank. Engineering degree in Artificial Intelligence, University of Tlemcen.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.role}`,
+    template: `%s | ${site.name}`,
   },
   description,
   keywords: [
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.domain,
     siteName: site.name,
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description,
   },
   robots: {

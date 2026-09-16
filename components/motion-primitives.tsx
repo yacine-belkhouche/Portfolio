@@ -15,7 +15,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /* ------------------------------------------------------------------ */
-/* Reveal — the workhorse scroll-triggered entrance                    */
+/* Reveal: the workhorse scroll-triggered entrance                    */
 /* ------------------------------------------------------------------ */
 
 type RevealProps = {
@@ -106,7 +106,7 @@ export function StaggerItem({
 }
 
 /* ------------------------------------------------------------------ */
-/* WordsUp — headline that assembles word by word                      */
+/* WordsUp: headline that assembles word by word                      */
 /* ------------------------------------------------------------------ */
 
 export function WordsUp({
@@ -162,7 +162,7 @@ export function WordsUp({
 }
 
 /* ------------------------------------------------------------------ */
-/* ScrollProgress — hairline reading indicator                         */
+/* ScrollProgress: hairline reading indicator                         */
 /* ------------------------------------------------------------------ */
 
 export function ScrollProgress() {
@@ -183,7 +183,7 @@ export function ScrollProgress() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Parallax — gentle depth on scroll                                   */
+/* Parallax: gentle depth on scroll                                   */
 /* ------------------------------------------------------------------ */
 
 export function Parallax({
@@ -212,7 +212,7 @@ export function Parallax({
 }
 
 /* ------------------------------------------------------------------ */
-/* Spotlight — card that lights up under the cursor                    */
+/* Spotlight: card that lights up under the cursor                    */
 /* ------------------------------------------------------------------ */
 
 export function Spotlight({
@@ -261,7 +261,7 @@ export function Spotlight({
 }
 
 /* ------------------------------------------------------------------ */
-/* Counter — numbers that settle into place                            */
+/* Counter: numbers that settle into place                            */
 /* ------------------------------------------------------------------ */
 
 export function Counter({ value }: { value: string }) {
@@ -283,8 +283,8 @@ export function Counter({ value }: { value: string }) {
     };
   }, [value]);
 
-  // Stays null until hydration so the server-rendered HTML — and anything
-  // crawling it — carries the real figure, not a zero waiting to animate.
+  // Stays null until hydration so the server-rendered HTML (and anything
+  // crawling it) carries the real figure, not a zero waiting to animate.
   const [shown, setShown] = useState<number | null>(null);
 
   useEffect(() => {

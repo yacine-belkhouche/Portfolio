@@ -9,7 +9,7 @@ const services = [
     title: "Business Management Systems",
     lede: "The software your operation should have had three years ago.",
     body: [
-      "Spreadsheets four people edit at once. Orders tracked in a WhatsApp thread. A stock count that is only true on Sunday night. I replace the improvised layer your business is running on with one system built around how your team actually works — real-time data, role-based access, and an audit trail that answers “who changed this” in a single click.",
+      "Spreadsheets four people edit at once. Orders tracked in a WhatsApp thread. A stock count that is only true on Sunday night. I replace the improvised layer your business is running on with one system built around how your team actually works: real-time data, role-based access, and an audit trail that answers “who changed this” in a single click.",
       "Underneath: a properly normalised PostgreSQL schema on Supabase, row-level security so a sales rep never sees payroll, and custom API integrations that make your payment gateway, accounting tool and delivery partner behave like one product instead of four.",
     ],
     tags: [
@@ -34,8 +34,8 @@ const services = [
     title: "High-Performance Web Development",
     lede: "Every 100 milliseconds you shave is revenue you keep.",
     body: [
-      "Visitors decide whether to trust a business before the page finishes painting. I build frontends in Next.js where the first meaningful pixel lands in under a second — server components and static rendering carrying the load, fonts and images negotiated ahead of time, JavaScript shipped only where it earns its place.",
-      "The gain is measurable rather than aesthetic: green Core Web Vitals, lower bounce, longer sessions, and a site that still feels expensive on a mid-range phone over a 4G connection — which is where most of your customers actually are.",
+      "Visitors decide whether to trust a business before the page finishes painting. I build frontends in Next.js where the first meaningful pixel lands in under a second: server components and static rendering carrying the load, fonts and images negotiated ahead of time, JavaScript shipped only where it earns its place.",
+      "The gain is measurable rather than aesthetic: green Core Web Vitals, lower bounce, longer sessions, and a site that still feels expensive on a mid-range phone over a 4G connection, which is where most of your customers actually are.",
     ],
     tags: [
       "Next.js RSC, SSR & ISR",
@@ -57,7 +57,7 @@ const services = [
     title: "Technical SEO",
     lede: "Ranking is an architecture problem before it is a content problem.",
     body: [
-      "Most sites lose search before a single word is written. A crawler arrives to find duplicated URLs, a heading order nothing can parse, and content that only exists once the JavaScript has run. I build it the other way round — semantic HTML, server-rendered content, a deliberate canonical and internal-link structure, Schema.org markup, and sitemaps that stay accurate as the site grows.",
+      "Most sites lose search before a single word is written. A crawler arrives to find duplicated URLs, a heading order nothing can parse, and content that only exists once the JavaScript has run. I build it the other way round: semantic HTML, server-rendered content, a deliberate canonical and internal-link structure, Schema.org markup, and sitemaps that stay accurate as the site grows.",
       "That work compounds. Organic traffic costs nothing per click and keeps arriving long after a campaign budget has been spent, which makes the structure underneath your site one of the few assets that appreciates.",
     ],
     tags: [

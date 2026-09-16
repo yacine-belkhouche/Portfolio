@@ -50,7 +50,7 @@ export function About() {
                     I came to web development through artificial intelligence.
                     An engineering degree at the University of Tlemcen meant
                     years spent in the parts of software most people never
-                    touch — model architecture, data pipelines, computational
+                    touch: model architecture, data pipelines, computational
                     cost, and the discipline of making something correct at
                     scale before making it beautiful.
                   </p>
@@ -73,7 +73,7 @@ export function About() {
                     <span className="text-fg">
                       Two years of freelancing
                     </span>{" "}
-                    taught me the other half — the commercial half. Businesses
+                    taught me the other half: the commercial half. Businesses
                     don&apos;t buy architecture. They buy hours no longer lost
                     to manual work, pages that stop leaking customers, and
                     traffic that arrives without an ad budget. I build the first
