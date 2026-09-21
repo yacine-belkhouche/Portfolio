@@ -84,7 +84,7 @@ export function Contact() {
           <Reveal>
             <p className="inline-flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-muted">
               <span className="h-px w-10 bg-hairline" />
-              <span className="text-gold">04</span>
+              <span className="text-gold">05</span>
               Contact
               <span className="h-px w-10 bg-hairline" />
             </p>

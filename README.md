@@ -49,8 +49,10 @@ components/
   site-header.tsx        condensing nav + mobile overlay
   hero.tsx / portrait.tsx
   about.tsx / services.tsx / process.tsx / contact.tsx / site-footer.tsx
+  projects.tsx           the Work section: live projects in browser frames
 lib/
   site.ts              name, phone, email, stats, stack; edit copy here
+  projects.ts          project copy, links and screenshots (public/projects/)
   supabase/            browser (anon) + server (service role) clients
 supabase/schema.sql    leads table, constraints, RLS
 ```
