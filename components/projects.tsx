@@ -20,7 +20,7 @@ function ArrowUpRight({ className = "" }: { className?: string }) {
 
 export function Projects() {
   return (
-    <section id="work" className="relative scroll-mt-24 py-24 lg:py-36">
+    <section id="work" className="relative scroll-mt-24 py-16 sm:py-24 lg:py-36">
       <div
         className="glow right-0 top-1/4 h-[28rem] w-[28rem] bg-gold-soft/[0.14]"
         aria-hidden
@@ -105,7 +105,7 @@ export function Projects() {
                   <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] uppercase tracking-[0.2em] text-muted">
                     {p.sector}
                     {p.status && (
-                      <span className="rounded-full border border-hairline px-2.5 py-1 text-[10px] tracking-[0.16em] text-fg/80">
+                      <span className="rounded-full border border-hairline px-2.5 py-1 text-[11px] sm:text-[10px] tracking-[0.16em] text-fg/80">
                         {p.status}
                       </span>
                     )}
@@ -158,7 +158,7 @@ export function Projects() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-8 inline-flex items-center gap-2 text-[13px] font-medium text-gold"
+                    className="group mt-6 inline-flex items-center gap-2 py-2.5 text-[13px] font-medium text-gold"
                   >
                     Visit the live site
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

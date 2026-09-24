@@ -45,7 +45,7 @@ export function SiteHeader() {
           <div className="container-x flex items-center justify-between py-5">
             <a
               href="#top"
-              className="group flex items-baseline gap-2.5"
+              className="group flex items-baseline gap-2.5 py-1"
               aria-label={site.name + ", home"}
             >
               <span className="font-display text-lg tracking-tight text-fg sm:text-xl">
@@ -61,10 +61,10 @@ export function SiteHeader() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="group relative text-[13px] tracking-wide text-muted transition-colors duration-300 hover:text-fg"
+                  className="group relative py-2 text-[13px] tracking-wide text-muted transition-colors duration-300 hover:text-fg"
                 >
                   {l.label}
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
+                  <span className="absolute bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
                 </a>
               ))}
             </nav>

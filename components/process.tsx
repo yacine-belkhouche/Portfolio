@@ -31,7 +31,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="relative scroll-mt-24 py-24 lg:py-36">
+    <section id="process" className="relative scroll-mt-24 py-16 sm:py-24 lg:py-36">
       <div className="container-x relative">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <div className="lg:sticky lg:top-32 lg:self-start">
@@ -70,7 +70,7 @@ export function Process() {
                 </span>
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                   <h3 className="font-display text-2xl text-fg">{s.title}</h3>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-muted">
+                  <span className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                     {s.time}
                   </span>
                 </div>

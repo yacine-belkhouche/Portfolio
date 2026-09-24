@@ -45,7 +45,7 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
               className="inline-flex items-center gap-3 rounded-full border border-hairline bg-surface/80 py-1.5 pl-2 pr-4 backdrop-blur"
             >
-              <span className="shrink-0 whitespace-nowrap rounded-full bg-gold/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
+              <span className="shrink-0 whitespace-nowrap rounded-full bg-gold/10 px-2.5 py-1 text-[11px] sm:text-[10px] uppercase tracking-[0.18em] text-gold">
                 AI Engineer
               </span>
               <span className="text-[11px] tracking-wide text-muted">
@@ -141,7 +141,7 @@ export function Hero() {
                 { k: "Reply time", v: "Under 24 hours" },
               ].map((item) => (
                 <div key={item.k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-muted">
+                  <dt className="text-[11px] sm:text-[10px] uppercase tracking-[0.18em] text-muted">
                     {item.k}
                   </dt>
                   <dd className="mt-1.5 text-sm text-fg">{item.v}</dd>

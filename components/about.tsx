@@ -5,7 +5,7 @@ import { stats } from "@/lib/site";
 
 export function About() {
   return (
-    <section id="about" className="relative scroll-mt-24 py-24 lg:py-36">
+    <section id="about" className="relative scroll-mt-24 py-16 sm:py-24 lg:py-36">
       <div
         className="glow left-[-10rem] top-1/3 h-[26rem] w-[26rem] bg-gold-soft/[0.16]"
         aria-hidden
@@ -31,7 +31,7 @@ export function About() {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-8 rounded-xl border border-hairline bg-surface p-5">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+                <p className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                   Education
                 </p>
                 <p className="mt-2 text-[15px] leading-relaxed text-fg">

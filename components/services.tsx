@@ -81,7 +81,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative scroll-mt-24 py-24 lg:py-36">
+    <section id="services" className="relative scroll-mt-24 py-16 sm:py-24 lg:py-36">
       <div className="container-x relative">
         <div className="max-w-3xl">
           <Reveal>
@@ -167,7 +167,7 @@ export function Services() {
                         href="#contact"
                         whileHover={{ x: 4 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="inline-flex shrink-0 items-center gap-2 text-[13px] text-gold"
+                        className="inline-flex shrink-0 items-center gap-2 py-2.5 text-[13px] text-gold"
                       >
                         Discuss this
                         <span aria-hidden>→</span>

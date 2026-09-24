@@ -2,7 +2,6 @@
 
 import {
   motion,
-  useInView,
   useMotionValue,
   useReducedMotion,
   useScroll,
@@ -266,7 +265,6 @@ export function Spotlight({
 
 export function Counter({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-20%" });
   const reduce = useReducedMotion();
 
   // Parsed once per value. A fresh match array on every render would land in
@@ -283,27 +281,42 @@ export function Counter({ value }: { value: string }) {
     };
   }, [value]);
 
-  // Stays null until hydration so the server-rendered HTML (and anything
-  // crawling it) carries the real figure, not a zero waiting to animate.
+  // null means "render the real figure". It only becomes a number once the
+  // observer below is installed, so the server-rendered HTML carries the true
+  // value and any failure here leaves the real number on screen rather than a
+  // zero waiting for an animation that never comes.
   const [shown, setShown] = useState<number | null>(null);
 
   useEffect(() => {
-    if (parts && !reduce) setShown(0);
-  }, [parts, reduce]);
+    const el = ref.current;
+    if (!el || !parts || reduce) return;
 
-  useEffect(() => {
-    if (!inView || !parts || reduce) return;
-    const start = performance.now();
-    const dur = 1100;
     let frame = 0;
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / dur, 1);
-      setShown(parts.target * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) frame = requestAnimationFrame(tick);
+    // Vertical inset only. A margin that also insets left and right never
+    // matches these numbers, which sit close to the page edge.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        const start = performance.now();
+        const dur = 1100;
+        const tick = (now: number) => {
+          const p = Math.min((now - start) / dur, 1);
+          setShown(parts.target * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+      },
+      { rootMargin: "0px 0px -12% 0px" }
+    );
+
+    setShown(0);
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(frame);
     };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [inView, parts, reduce]);
+  }, [parts, reduce]);
 
   if (!parts || shown === null) return <span ref={ref}>{value}</span>;
 

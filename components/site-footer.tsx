@@ -22,10 +22,10 @@ export function SiteFooter() {
 
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-3">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+              <p className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                 Sections
               </p>
-              <ul className="mt-4 space-y-2.5 text-[13px]">
+              <ul className="mt-4 space-y-0.5 text-[13px]">
                 {[
                   { href: "#about", label: "About" },
                   { href: "#services", label: "Services" },
@@ -36,7 +36,7 @@ export function SiteFooter() {
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      className="text-muted transition-colors duration-300 hover:text-fg"
+                      className="inline-block py-2 text-muted transition-colors duration-300 hover:text-fg"
                     >
                       {l.label}
                     </a>
@@ -46,7 +46,7 @@ export function SiteFooter() {
             </div>
 
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+              <p className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                 Services
               </p>
               <ul className="mt-4 space-y-2.5 text-[13px] text-muted">
@@ -57,14 +57,14 @@ export function SiteFooter() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+              <p className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                 Direct
               </p>
-              <ul className="mt-4 space-y-2.5 text-[13px]">
+              <ul className="mt-4 space-y-0.5 text-[13px]">
                 <li>
                   <a
                     href={site.phoneHref}
-                    className="text-fg transition-colors duration-300 hover:text-gold"
+                    className="inline-block py-2 text-fg transition-colors duration-300 hover:text-gold"
                   >
                     {site.phoneDisplay}
                   </a>
@@ -72,7 +72,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={"mailto:" + site.email}
-                    className="text-fg transition-colors duration-300 [overflow-wrap:anywhere] hover:text-gold"
+                    className="inline-block py-2 text-fg transition-colors duration-300 [overflow-wrap:anywhere] hover:text-gold"
                   >
                     {emailParts[0]}
                     <wbr />@{emailParts[1]}

@@ -73,7 +73,7 @@ export function Contact() {
   const label = "block text-[11px] uppercase tracking-[0.18em] text-muted";
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 lg:py-36">
+    <section id="contact" className="relative scroll-mt-24 py-16 sm:py-24 lg:py-36">
       <div
         className="glow left-1/2 top-10 h-[30rem] w-[30rem] -translate-x-1/2 bg-gold-soft/[0.18]"
         aria-hidden
@@ -145,7 +145,7 @@ export function Contact() {
                         <path d={c.icon} />
                       </svg>
                     </span>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-muted">
                       {c.eyebrow}
                     </p>
                   </div>
@@ -168,7 +168,7 @@ export function Contact() {
                   <button
                     type="button"
                     onClick={() => copy(c.copyValue, c.key)}
-                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-hairline px-3.5 py-1.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/35 hover:text-fg"
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-hairline px-4 py-2.5 text-[11px] tracking-wide text-muted transition-colors duration-500 hover:border-gold/35 hover:text-fg"
                   >
                     {copied === c.key ? "Copied" : "Copy"}
                     <span aria-hidden>{copied === c.key ? "✓" : "⧉"}</span>
