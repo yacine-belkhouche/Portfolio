@@ -291,29 +291,52 @@ export function Counter({ value }: { value: string }) {
     const el = ref.current;
     if (!el || !parts || reduce) return;
 
+    // Already on screen at mount: leave the real figure alone. Counting up from
+    // zero under the reader's eyes is worse than not animating at all, and it
+    // removes any chance of a visible zero.
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+
     let frame = 0;
+    let started = false;
+
+    const run = () => {
+      if (started) return;
+      started = true;
+      const start = performance.now();
+      const dur = 1100;
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / dur, 1);
+        setShown(parts.target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    };
+
     // Vertical inset only. A margin that also insets left and right never
     // matches these numbers, which sit close to the page edge.
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
         io.disconnect();
-        const start = performance.now();
-        const dur = 1100;
-        const tick = (now: number) => {
-          const p = Math.min((now - start) / dur, 1);
-          setShown(parts.target * (1 - Math.pow(1 - p, 3)));
-          if (p < 1) frame = requestAnimationFrame(tick);
-        };
-        frame = requestAnimationFrame(tick);
+        run();
       },
       { rootMargin: "0px 0px -12% 0px" }
     );
+
+    // Backstop: if the observer somehow never reports, show the real figure
+    // rather than leaving a zero on the page.
+    const rescue = window.setTimeout(() => {
+      if (!started) {
+        started = true;
+        setShown(parts.target);
+      }
+    }, 8000);
 
     setShown(0);
     io.observe(el);
     return () => {
       io.disconnect();
+      window.clearTimeout(rescue);
       cancelAnimationFrame(frame);
     };
   }, [parts, reduce]);
